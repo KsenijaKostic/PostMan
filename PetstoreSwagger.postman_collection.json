@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "3684561e-8674-4636-97d6-4354bbaa0a5e",
+		"name": "PetstoreSwagger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "{{",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 64,\r\n  \"username\": \"user5\",\r\n  \"firstName\": \"Ksenija\",\r\n  \"lastName\": \"Kostic\",\r\n  \"email\": \"xeniakostic993@gmail.com\",\r\n  \"password\": \"Qwerty123!\",\r\n  \"phone\": \"0631231231\",\r\n  \"userStatus\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/v2/user",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v2",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log in",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v2/user/login?username=test&password=abc123",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v2",
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "test"
+								},
+								{
+									"key": "password",
+									"value": "abc123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log out",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v2/user/logout",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v2",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user1 profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v2/user/test",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v2",
+								"user",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 95,\r\n    \"username\": \"test\",\r\n    \"firstName\": \"Roy\",\r\n    \"lastName\": \"Ferry\",\r\n    \"email\": \"Aliya22@hotmail.com\",\r\n    \"password\": \"abc123\",\r\n    \"phone\": \"213-307-0458\",\r\n    \"userStatus\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/v2/user/test",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v2",
+								"user",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pets",
+			"item": [
+				{
+					"name": "Add Pet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 123456,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"Cica\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/v2/pet",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v2",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update pet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 123456,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"Cica-maca\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/v2/pet",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v2",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pet by status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v2/pet/findByStatus?status=available",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v2",
+								"pet",
+								"findByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "available"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pet by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v2/pet/123456",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v2",
+								"pet",
+								"123456"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete pet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v2/pet/78",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v2",
+								"pet",
+								"78"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
